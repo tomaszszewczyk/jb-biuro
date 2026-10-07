@@ -1,16 +1,305 @@
 ---
+import "../styles/global.css";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<!-- personality: professional, trustworthy -->
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Biuro Rachunkowe Joanna Bączar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="mx-auto w-4xl font-sans">
+    <header class="bg-gray-200 p-8">
+      <h1 class="text-4xl font-bold">
+        Biuro Rachunkowe Joanna Bączar
+        <br />
+        <span class="text-2xl font-semibold">
+          spółka z ograniczoną odpowiedzialnością
+        </span>
+      </h1>
+      <address>
+        ulica Mieszka I 17A/1<br />
+        58-100 Świdnica
+      </address>
+      <ul>
+        <li>KRS: 0000664955</li>
+        <li>NIP: 8842774143</li>
+        <li>REGON: 366617754</li>
+      </ul>
+      <section>
+        <h2>Kontakt</h2>
+        <p>
+          Mail:
+          <a href="mailto:ksiegowosctwoja@wp.pl">ksiegowosctwoja@wp.pl</a>
+        </p>
+        <p>
+          Telefon
+          <a href="tel:+48748577566">74/8577566</a>;
+          <a href="tel:+48693368459">693368459</a>
+        </p>
+      </section>
+    </header>
+
+    <nav aria-label="Hasła">
+      <h2>Hasła</h2>
+      <ul>
+        <li><a href="#oferta">Księgowość firm</a></li>
+        <li><a href="#pelna-ksiegowosc">Pełna księgowość</a></li>
+        <li><a href="#ksiegi-podatkowe">Księgi podatkowe, ryczałt</a></li>
+        <li><a href="#kadry-i-place">Kadry i płace</a></li>
+        <li><a href="#dotacje">Pomoc w rozliczaniu dotacji</a></li>
+        <li><a href="#praca-zdalna">Praca zdalna</a></li>
+        <li><a href="#zmiany-podatkowe">Najnowsze zmiany w przepisach</a></li>
+        <li><a href="#kalkulatory">Kalkulatory</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="o-nas">
+        <h2>O nas</h2>
+        <p>
+          Jesteśmy biurem rachunkowym działającym prawie 30 lat na rynku usług
+          księgowych. Nasza siedziba mieści się w Świdnicy ale z powodzeniem
+          świadczymy usługi księgowości zdalnej.
+        </p>
+        <p>
+          Nasz zespół posiada wyższe wykształcenie, wieloletnie doświadczenie
+          zawodowe. Na bieżąco szkolimy się z zakresu prawa podatkowego,
+          rachunkowości oraz prawa pracy. Posiadamy uprawnienia MF – certyfikat
+          usługowego prowadzenia ksiąg.
+        </p>
+        <p>
+          Pracujemy na najlepszych programach księgowych w Polsce. Naszym
+          głównym oprogramowaniem jest pakiet programów Comarch tj. Comarch
+          Optima, Comarch XML, Comarch Betterfly i inne dedykowane programy dla
+          biur rachunkowych.
+        </p>
+        <p id="praca-zdalna">
+          Dzięki najnowszemu oprogramowaniu jesteśmy w stanie obsługiwać firmy z
+          całej Polski, w pracy zdalnej, mając ciągły kontakt z klientem.
+        </p>
+      </section>
+
+      <section id="oferta">
+        <h2>Oferta</h2>
+        <h3>Zakres pracy</h3>
+        <ul>
+          <li id="pelna-ksiegowosc">otwarcie ksiąg rachunkowych</li>
+          <li>
+            przygotowanie polityki rachunkowości i obiegu dokumentów w dobie
+            KSEF i JPK – PD
+          </li>
+          <li>przygotowanie planu kont</li>
+          <li>praca na kontach zespołu 4 jak i 5 (dla firm produkcyjnych)</li>
+          <li>
+            pełna sprawozdawczość finansowa: bilans, rachunek porównawczy,
+            rachunek kalkulacyjny, kapitały, cash flow oraz inne np.
+            rozrachunki, wskaźniki itp.
+          </li>
+          <li>
+            zapewniamy zgodność i przygotowanie ksiąg handlowych do
+            obowiązkowego wysyłania JPK-PD; JPK-ST od 2026 roku
+          </li>
+          <li>
+            zapewniamy przygotowanie ksiąg handlowych do uzupełniania o
+            znaczniki oraz moduł podatkowy – obowiązujący od 2026 r.
+          </li>
+          <li>
+            pełna obsługa KSEF, bezpośrednio z systemu MF lub poprzez dedykowany
+            program
+          </li>
+          <li id="kadry-i-place">dodatkowo płace – kadry; obsługa ZUS</li>
+          <li>zapewniamy pracę zdalną z klientem</li>
+          <li id="ksiegi-podatkowe">
+            obsługujemy także firmy na uproszczonej księgowości – KPIR, ryczałt
+          </li>
+          <li id="dotacje">rozliczanie dotacji</li>
+        </ul>
+        <p>
+          Pracujemy na programach Comarch Optima, Comarch XML oraz Comarch
+          Betterfly – jako program dedykowany klientowi do obsługi KSEF.
+        </p>
+
+        <h3>Cennik</h3>
+        <ol>
+          <li>
+            pełna księgowość
+            <ul>
+              <li>800,00 zł netto do 10 dokumentów</li>
+              <li>1.500,00 zł netto do 30 dokumentów</li>
+              <li>2.000,00 zł netto od 31 do 50 dokumentów</li>
+            </ul>
+            <p>
+              Szerszy zakres, inne niestandardowe pozycje – cena ustalana
+              indywidualnie.
+            </p>
+          </li>
+          <li>
+            Kadry i płace – 70,00 zł/pracownik (akta osobowe oraz sporządzanie
+            list płac oraz ZUS)
+          </li>
+        </ol>
+      </section>
+
+      <section id="zmiany-podatkowe">
+        <h2>Wybrane zmiany podatkowe na 2027 rok</h2>
+
+        <article>
+          <h3>
+            Min. Fin. czasowo zwalnia z obowiązku przesyłania ewidencji i ksiąg
+            w postaci JPK
+          </h3>
+
+          <h4>
+            Podatkowa księga i ewidencja środków trwałych u podatników PIT
+          </h4>
+          <p>
+            Projekt rozporządzenia (nr 114/2026) zwalnia z obowiązku prowadzenia
+            podatkowej księgi przychodów i rozchodów przy użyciu programów
+            komputerowych oraz jej przesłania za pomocą środków komunikacji
+            elektronicznej w postaci pliku JPK_PKPIR:
+          </p>
+          <ul>
+            <li>
+              za 2027 r. podmioty, które w 2026 r. oraz na dzień 1 stycznia 2027
+              r., a w przypadku rozpoczęcia prowadzenia działalności
+              gospodarczej w 2027 r. – na dzień rozpoczęcia tej działalności,
+              odpowiednio nie były lub nie są czynnymi podatnikami VAT,
+            </li>
+            <li>
+              za 2028 r. podmioty, które w 2026 r., w 2027 r. oraz na dzień 1
+              stycznia 2028 r., a w przypadku rozpoczęcia prowadzenia
+              działalności gospodarczej w 2028 r. – na dzień rozpoczęcia tej
+              działalności, odpowiednio nie były lub nie są czynnymi podatnikami
+              VAT.
+            </li>
+          </ul>
+          <p>
+            Projekt przewiduje również zwolnienie z obowiązku prowadzenia przy
+            użyciu programów komputerowych ewidencji środków trwałych oraz
+            wartości niematerialnych i prawnych oraz przesyłania jej za pomocą
+            środków komunikacji elektronicznej (w postaci plików JPK_ST_KR lub
+            JPK_ST) przez podmioty objęte takim obowiązkiem na podstawie
+            odpowiednich przepisów ustawy o PDOF – za lata 2026, 2027 i 2028.
+          </p>
+
+          <h4>
+            Ewidencja przychodów i ewidencja środków trwałych prowadzone przez
+            ryczałtowców
+          </h4>
+          <p>
+            Projekt rozporządzenia (nr 111/2026) zwalnia z obowiązku prowadzenia
+            ewidencji przychodów przy użyciu programów komputerowych oraz jej
+            przesłania za pomocą środków komunikacji elektronicznej (w postaci
+            pliku JPK_EWP):
+          </p>
+          <ul>
+            <li>
+              za 2027 r. podmioty, które w 2026 r. oraz na dzień 1 stycznia 2027
+              r., a w przypadku rozpoczęcia prowadzenia działalności
+              gospodarczej w 2027 r. – na dzień rozpoczęcia tej działalności,
+              odpowiednio nie były lub nie są czynnymi podatnikami VAT,
+            </li>
+            <li>
+              za 2028 r. podmioty, które w 2026 r., w 2027 r. oraz na dzień 1
+              stycznia 2028 r., a w przypadku rozpoczęcia prowadzenia
+              działalności gospodarczej w 2028 r. – na dzień rozpoczęcia tej
+              działalności, odpowiednio nie były lub nie są czynnymi podatnikami
+              VAT.
+            </li>
+          </ul>
+          <p>
+            Zwolnienie to dotyczy podatników opłacających ryczałt od przychodów
+            ewidencjonowanych.
+          </p>
+        </article>
+
+        <article>
+          <h3>Nowa skala podatkowa na 2027 rok</h3>
+          <p>
+            Zgodnie z projektem obecna konstrukcja skali podatkowej składająca
+            się z dwóch stawek podatku 12% i 32% oraz jednego progu dochodów w
+            wysokości 120 tys. zł zostanie rozbudowana do dwóch progów
+            podatkowych i trzech stawek podatku.
+          </p>
+          <p>
+            W nowelizacji resort finansów zaproponował skalę podatkową, w której
+            granicę pierwszego przedziału, objętego nadal 12% stawką podatku
+            określono na 130 tys. zł. Drugi będzie dotyczył dochodów w
+            przedziale powyżej 130 tys. zł do 150 tys. zł i w nim pojawi się
+            nowa stawka podatku w wysokości 24%. Trzeci natomiast obejmie
+            dochody przekraczające 150 tys. zł, dla opodatkowania których
+            właściwą stawką podatku będzie 32%. W efekcie pierwszy przedział
+            dotychczasowej skali zostanie podwyższony o 10 tys. zł, w drugim
+            będzie wyższy próg oraz o 8 punktów procentowych niższa stawka
+            podatku, a 32% stawką będą opodatkowane dochody dopiero powyżej 150
+            tys. zł. Kwota wolna od podatku pozostanie natomiast bez zmian.
+          </p>
+        </article>
+
+        <article>
+          <h3>Podwyżka daniny solidarnościowej</h3>
+          <p>
+            Danina solidarnościowa obowiązująca od 1 stycznia 2019 r. to
+            obligatoryjne obciążenie dla tzw. milionerów, gdyż obejmuje ona
+            dochód osoby fizycznej (po odliczeniach) stanowiący nadwyżkę ponad 1
+            mln zł. Jej stawka to obecnie 4%, a podstawę jej naliczenia stanowią
+            dochody, do których stosuje się art. 27 ust. 1, ust. 9 i ust. 9a,
+            art. 30b, art. 30c oraz art. 30f ustawy o pdof, czyli:
+          </p>
+          <ul>
+            <li>
+              opodatkowane według skali podatkowej, które są wykazywane w
+              zeznaniach rocznych: PIT-40A, PIT-36, PIT-37,
+            </li>
+            <li>
+              dochody z niektórych zysków kapitałowych, od których należny
+              podatek dochodowy pobiera się według stałej stawki 19% i wykazuje
+              w zeznaniu PIT-38,
+            </li>
+            <li>
+              dochody z działalności gospodarczej lub działów specjalnych
+              produkcji rolnej, opodatkowanych stawką liniową 19% (PIT-36L),
+            </li>
+            <li>
+              dochody zagranicznej jednostki kontrolowanej, od których podatek
+              oblicza się w zeznaniu PIT-CFC i opodatkowuje stawką 19%.
+            </li>
+          </ul>
+          <p>
+            Ministerstwo Finansów zaproponowało podwyższenie tej daniny do 5%.
+          </p>
+        </article>
+
+        <article>
+          <h3>Ryczałtowcy z niższym limitem i nową stawką podatku</h3>
+          <p>
+            Obecnie limit przychodów warunkujący możliwość korzystania z
+            opodatkowania ryczałtem wynosi 2 mln euro. W tej wysokości
+            obowiązuje on od 2021 r. Ministerstwo Finansów proponuje od 2027 r.
+            powrót do kwoty sprzed 2021 r. wynoszącej 250 tys. euro.
+          </p>
+          <p>
+            Projektowane przepisy zakładają także zmianę dotychczasowych
+            rozwiązań polegającą na stosowaniu wyższej 17% stawki ryczałtu do
+            nadwyżki przychodów osiągniętych w trakcie roku ponad 300 tys. euro.
+          </p>
+        </article>
+      </section>
+
+      <section id="kalkulatory">
+        <h2>Kalkulatory</h2>
+      </section>
+    </main>
+  </body>
 </html>
