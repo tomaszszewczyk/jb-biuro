@@ -3,5 +3,6 @@
 @import "tailwindcss/utilities.css" layer(utilities);
 
 @theme {
-  --font-sans: "Barlow";
+  --font-header: "Barlow";
+  --font-sans: "Lato";
 }

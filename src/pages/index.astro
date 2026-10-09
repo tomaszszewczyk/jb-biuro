@@ -14,13 +14,13 @@ import "../styles/global.css";
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
       rel="stylesheet"
     />
   </head>
   <body class="mx-auto w-4xl font-sans">
     <header class="bg-gray-200 p-8">
-      <h1 class="text-4xl font-bold">
+      <h1 class="text-4xl font-bold font-header">
         Biuro Rachunkowe Joanna Bączar
         <br />
         <span class="text-2xl font-semibold">
@@ -28,14 +28,24 @@ import "../styles/global.css";
         </span>
       </h1>
       <address>
-        ulica Mieszka I 17A/1<br />
+        ulica Mieszka I 17A/1
+        <br />
         58-100 Świdnica
       </address>
-      <ul>
-        <li>KRS: 0000664955</li>
-        <li>NIP: 8842774143</li>
-        <li>REGON: 366617754</li>
-      </ul>
+      <div class="bg-amber-300 px-4 py-4 flex flex-col gap-2 w-50">
+        <div class="flex gap-4 items-baseline">
+          <div class="w-16 text-right text-sm">KRS</div>
+          <div class="text-lg">0000664955</div>
+        </div>
+        <div class="flex gap-4 items-baseline">
+          <div class="w-16 text-right text-sm">NIP</div>
+          <div class="text-lg">8842774143</div>
+        </div>
+        <div class="flex gap-4 items-baseline">
+          <div class="w-16 text-right text-sm">REGON</div>
+          <div class="text-lg">366617754</div>
+        </div>
+      </div>
       <section>
         <h2>Kontakt</h2>
         <p>
