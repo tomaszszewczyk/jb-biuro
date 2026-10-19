@@ -1,0 +1,22 @@
+---
+const content = {
+  title: "Twoja księgowość, niezależnie od lokalizacji",
+  paragraphs: [
+    "Nasze biuro mieści się w Świdnicy, ale obsługujemy również firmy z całej Polski.",
+    "Oferujemy współpracę stacjonarną i zdalną, korzystając z nowoczesnego oprogramowania księgowego i elektronicznego obiegu informacji. Dzięki temu możemy prowadzić księgowość Twojej firmy i pozostawać w bieżącym kontakcie, nawet jeśli nie znajdujesz się w naszej okolicy.",
+  ],
+  action: {
+    href: "#kontakt",
+    label: "Zapytaj o współpracę",
+  },
+};
+---
+
+<section class="p-4">
+  <h2 class="font-bold text-xl">{content.title}</h2>
+  <p class="py-2">{content.paragraphs[0]}</p>
+  <p class="pt-2 pb-6">{content.paragraphs[1]}</p>
+  <a href={content.action.href} class="py-2 px-4 bg-gray-100">
+    {content.action.label}
+  </a>
+</section>

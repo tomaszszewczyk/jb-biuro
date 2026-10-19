@@ -1,0 +1,29 @@
+---
+interface Props {
+  items: { href: string; label: string }[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav
+  id="site-nav"
+  class="hidden fixed inset-0 bg-white md:hidden"
+  aria-label="Główne"
+  data-nav
+>
+  <ul class="flex flex-col items-center justify-center h-full gap-4">
+    {
+      items.map((item, index) => (
+        <li>
+          <a
+            href={item.href}
+            class={index === items.length - 1 ? "font-bold" : ""}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

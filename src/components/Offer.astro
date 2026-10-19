@@ -1,0 +1,89 @@
+---
+import CheckIcon from "./CheckIcon.astro";
+
+const content = {
+  title: "Oferta księgowa dla Twojej firmy",
+  description:
+    "Od bieżących rozliczeń po pełną sprawozdawczość finansową. Zapewniamy obsługę księgową dopasowaną do formy prowadzonej działalności i zakresu obowiązków Twojej firmy.",
+  services: [
+    {
+      title: "Pełna księgowość",
+      description:
+        "Prowadzimy księgi rachunkowe i przygotowujemy sprawozdania finansowe. Zajmujemy się zarówno organizacją księgowości, jak i jej bieżącą obsługą.",
+      items: [
+        "Otwarcie i prowadzenie ksiąg rachunkowych",
+        "Opracowanie polityki rachunkowości i planu kont",
+        "Ewidencja kosztów na kontach zespołu 4 i 5, w tym dla firm produkcyjnych",
+        "Sporządzanie sprawozdań finansowych: bilansu, rachunku zysków i strat oraz rachunku przepływów pieniężnych",
+        "Przygotowywanie zestawień rozrachunków, kapitałów i wskaźników finansowych",
+      ],
+    },
+    {
+      title: "KPiR i ryczałt",
+      description:
+        "Obsługujemy przedsiębiorców prowadzących uproszczoną księgowość. Zajmujemy się bieżącą ewidencją przychodów i kosztów oraz rozliczeniami podatkowymi.",
+      items: [
+        "Prowadzenie podatkowej księgi przychodów i rozchodów (KPiR) oraz ewidencji przychodów dla ryczałtu",
+        "Ewidencjonowanie i weryfikacja dokumentów księgowych",
+        "Obliczanie podatku dochodowego i przygotowywanie rocznych deklaracji PIT",
+        "Prowadzenie rejestrów VAT oraz sporządzanie i wysyłanie wymaganych plików JPK",
+        "Prowadzenie ewidencji środków trwałych oraz rozliczanie amortyzacji, jeśli dotyczy",
+      ],
+    },
+    {
+      title: "Kadry i płace",
+      description:
+        "Zajmujemy się dokumentacją pracowniczą, naliczaniem wynagrodzeń oraz rozliczeniami z ZUS.",
+      items: [
+        "Prowadzenie akt osobowych",
+        "Sporządzanie list płac",
+        "Naliczanie wynagrodzeń",
+        "Obsługa rozliczeń i dokumentacji ZUS",
+      ],
+    },
+    {
+      title: "KSeF i JPK",
+      description:
+        "Pomagamy firmom przygotować księgowość do zmieniających się obowiązków podatkowych i sprawozdawczych, w tym obsługi Krajowego Systemu e-Faktur.",
+      items: [
+        "Obsługa faktur w KSeF",
+        "Dostosowanie obiegu dokumentów do KSeF",
+        "Przygotowanie ksiąg do raportowania JPK-PD i JPK-ST, zgodnie z obowiązkami danej firmy",
+        "Dostosowanie ewidencji księgowej do wymaganych znaczników i danych podatkowych",
+      ],
+    },
+  ],
+  grants: {
+    title: "Rozliczanie dotacji",
+    description:
+      "Wspieramy przedsiębiorców w rozliczaniu otrzymanych dotacji i przygotowaniu związanej z nimi dokumentacji księgowej.",
+  },
+};
+---
+
+<section id="oferta" class="p-4">
+  <h2 class="font-bold text-xl">{content.title}</h2>
+  <p class="py-2">{content.description}</p>
+
+  {
+    content.services.map((service) => (
+      <div class="border border-gray-100 p-4 my-4">
+        <h3 class="font-bold text-lg">{service.title}</h3>
+        <p class="py-2">{service.description}</p>
+        <ul class="flex flex-col gap-4 px-2 py-4">
+          {service.items.map((item) => (
+            <li class="flex gap-2">
+              <CheckIcon class="shrink-0 text-gray-500" />
+              <span class="text-sm pt-0.5">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
+
+  <div class="border border-gray-100 p-4 my-4">
+    <h3 class="font-bold text-lg">{content.grants.title}</h3>
+    <p class="py-2">{content.grants.description}</p>
+  </div>
+</section>

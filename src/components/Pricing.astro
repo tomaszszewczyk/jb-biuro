@@ -1,0 +1,83 @@
+---
+const content = {
+  title: "Cennik usług księgowych",
+  description:
+    "Poznaj orientacyjne koszty obsługi księgowej. Cena zależy od liczby dokumentów i zakresu świadczonych usług.",
+  fullAccounting: {
+    title: "Pełna księgowość",
+    tiers: [
+      {
+        label: "Do 10 dokumentów miesięcznie",
+        price: "800 zł netto / miesiąc",
+      },
+      {
+        label: "11-30 dokumentów miesięcznie",
+        price: "1 500 zł netto / miesiąc",
+      },
+      {
+        label: "31-50 dokumentów miesięcznie",
+        price: "2 000 zł netto / miesiąc",
+      },
+    ],
+    custom: {
+      label: "Powyżej 50 dokumentów miesięcznie",
+      price: "Wycena indywidualna",
+    },
+    note: "Do podanych cen należy doliczyć podatek VAT.",
+  },
+  payroll: {
+    title: "Kadry i płace",
+    description:
+      "Prowadzenie akt osobowych, sporządzanie list płac i obsługa rozliczeń ZUS.",
+    price: "70 zł netto / pracownik / miesiąc",
+  },
+  customQuote: {
+    title: "Potrzebujesz szerszego zakresu usług?",
+    description:
+      "Jeżeli Twoja firma wymaga niestandardowej obsługi lub dodatkowych rozliczeń, skontaktuj się z nami. Przygotujemy wycenę uwzględniającą zakres Twoich potrzeb.",
+    action: {
+      href: "#kontakt",
+      label: "Poproś o wycenę",
+    },
+  },
+};
+---
+
+<section id="cennik" class="p-4">
+  <h2 class="font-bold text-xl">{content.title}</h2>
+  <p class="py-2">{content.description}</p>
+
+  <h3 class="font-bold pb-2">{content.fullAccounting.title}</h3>
+
+  {
+    content.fullAccounting.tiers.map((tier) => (
+      <div class="border border-gray-100 p-2 mb-4">
+        <p class="text-sm">{tier.label}</p>
+        <p class="font-bold">{tier.price}</p>
+      </div>
+    ))
+  }
+
+  <div class="border border-gray-100 p-2 mb-6">
+    <p class="text-sm">{content.fullAccounting.custom.label}</p>
+    <p class="font-bold">{content.fullAccounting.custom.price}</p>
+  </div>
+
+  <h3 class="font-bold mb-2">{content.payroll.title}</h3>
+
+  <div class="border border-gray-100 p-2">
+    <p class="py-2 text-sm">{content.payroll.description}</p>
+    <p class="font-bold pb-2">{content.payroll.price}</p>
+  </div>
+
+  <p class="text-sm pb-4 pt-2">{content.fullAccounting.note}</p>
+
+  <h3 class="font-bold">{content.customQuote.title}</h3>
+  <p class="pb-8 pt-2">{content.customQuote.description}</p>
+
+  <p class="pb-6">
+    <a href={content.customQuote.action.href} class="py-2 px-4 bg-gray-100">
+      {content.customQuote.action.label}
+    </a>
+  </p>
+</section>

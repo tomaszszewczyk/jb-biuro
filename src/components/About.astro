@@ -1,0 +1,38 @@
+---
+const content = {
+  title: "Doświadczenie, na którym możesz polegać",
+  description:
+    "Jesteśmy biurem rachunkowym ze Świdnicy, działającym na rynku usług księgowych od prawie 30 lat. Łączymy wieloletnią praktykę z aktualną wiedzą podatkową i nowoczesnymi narzędziami księgowymi.",
+  points: [
+    {
+      title: "Wieloletnie doświadczenie",
+      description:
+        "Od lat obsługujemy przedsiębiorców, prowadząc księgi rachunkowe, rozliczenia podatkowe oraz sprawy kadrowo-płacowe.",
+    },
+    {
+      title: "Aktualna wiedza i kwalifikacje",
+      description:
+        "Nasz zespół posiada wyższe wykształcenie i wieloletnie doświadczenie zawodowe. Regularnie poszerzamy wiedzę z zakresu rachunkowości, prawa podatkowego i prawa pracy. Posiadamy również certyfikat Ministerstwa Finansów w zakresie usługowego prowadzenia ksiąg rachunkowych.",
+    },
+    {
+      title: "Sprawdzone oprogramowanie",
+      description:
+        "Pracujemy z wykorzystaniem oprogramowania Comarch, w tym Comarch Optima, oraz innych narzędzi wspierających obsługę księgową firm. Dzięki rozwiązaniom cyfrowym możemy sprawnie współpracować z przedsiębiorcami niezależnie od ich lokalizacji.",
+    },
+  ],
+};
+---
+
+<section id="o-nas" class="p-4">
+  <h2 class="font-bold text-xl">{content.title}</h2>
+  <p class="pt-2 pb-6">{content.description}</p>
+
+  {
+    content.points.map((point) => (
+      <>
+        <h3 class="font-bold text-lg">{point.title}</h3>
+        <p class="pb-4">{point.description}</p>
+      </>
+    ))
+  }
+</section>

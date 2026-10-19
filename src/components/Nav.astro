@@ -1,0 +1,57 @@
+---
+import DesktopNav from "./DesktopNav.astro";
+import MobileNav from "./MobileNav.astro";
+
+const items = [
+  { href: "#oferta", label: "Oferta" },
+  { href: "#o-nas", label: "O nas" },
+  { href: "#cennik", label: "Cennik" },
+  { href: "#kontakt", label: "Kontakt" },
+];
+---
+
+<header class="sticky top-0 z-10 bg-white flex justify-between p-4">
+  <div>Biuro Rachunkowe Joanna Bączar</div>
+  <button
+    type="button"
+    class="relative z-20 md:hidden"
+    aria-expanded="false"
+    aria-controls="site-nav"
+    data-nav-toggle
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="size-6"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+    </svg>
+  </button>
+  <MobileNav items={items} />
+  <DesktopNav items={items} />
+</header>
+
+<script>
+  const toggle = document.querySelector("[data-nav-toggle]");
+  const nav = document.querySelector("[data-nav]");
+
+  if (toggle instanceof HTMLButtonElement && nav instanceof HTMLElement) {
+    toggle.addEventListener("click", () => {
+      const collapsed = nav.classList.toggle("hidden");
+      toggle.setAttribute("aria-expanded", String(!collapsed));
+    });
+
+    nav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        nav.classList.add("hidden");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+</script>
