@@ -31,88 +31,104 @@ const content = {
 };
 ---
 
-<section id="kontakt" class="p-4 bg-gray-50">
-  <h2 class="font-semibold text-2xl font-serif text-gray-700">
+<section id="kontakt" class="p-4 md:p-8 bg-gray-50 max-w-5xl mx-auto shadow-sm">
+  <h2 class="font-semibold text-2xl md:text-3xl font-serif text-gray-700">
     {content.title}
   </h2>
-  {
-    content.intro.map((paragraph) => (
-      <p class="py-2 font-light text-gray-700">{paragraph}</p>
-    ))
-  }
 
-  <form class="my-4 rounded-xs bg-white shadow-sm overflow-clip">
-    <div class="flex flex-col gap-4 p-6">
-      <p class="flex flex-col gap-2">
-        <label for="email" class="text-sm text-gray-500 pl-2"
-          >{content.fields.email.label}</label
-        >
+  <div class="md:flex gap-12 items-center">
+    <div class="flex-1">
+      {
+        content.intro
+          .slice(0, 1)
+          .map((paragraph) => (
+            <p class="py-2 font-light text-gray-700 md:text-lg max-w-xl">
+              {paragraph}
+            </p>
+          ))
+      }
+      {
+        content.intro
+          .slice(1, 2)
+          .map((paragraph) => (
+            <p class="py-2 font-light md:text-sm text-gray-700">{paragraph}</p>
+          ))
+      }
 
-        <input
-          id="email"
-          name="email"
-          type="email"
-          required
-          class="bg-white rounded-sm p-2 text-sm text-gray-700 border border-gray-100"
-          placeholder={content.fields.email.placeholder}
-        />
+      <p class="py-4 font-light text-gray-700 md:text-sm">
+        {content.directContact}
       </p>
 
-      <p class="flex flex-col gap-1 pb-1">
-        <label for="phone" class="text-sm text-gray-500 pl-2"
-          >{content.fields.phone.label}</label
+      <p class="flex gap-4 items-center pb-2 pl-2">
+        <a href={content.contacts.mobile.href} class="text-xl text-gray-700"
+          >{content.contacts.mobile.label}</a
         >
-        <input
-          id="phone"
-          name="phone"
-          type="tel"
-          class="bg-white rounded-sm p-2 text-sm text-gray-700 border border-gray-100"
-          placeholder={content.fields.phone.placeholder}
-        />
       </p>
-
-      <p class="flex flex-col gap-1 pb-1">
-        <label for="message" class="text-sm text-gray-500 pl-2"
-          >{content.fields.message.label}</label
+      <p class="flex gap-4 items-center pb-2 pl-2">
+        <a href={content.contacts.phone.href} class="text-xl text-gray-700"
+          >{content.contacts.phone.label}</a
         >
-        <textarea
-          id="message"
-          name="message"
-          class="bg-white rounded-sm p-2 text-sm text-gray-700 border border-gray-100"
-          placeholder="Proszę o kontakt w sprawie..."></textarea>
+      </p>
+      <p class="flex gap-4 items-center pb-2 pl-2">
+        <a href={content.contacts.email.href} class="text-xl text-gray-700"
+          >{content.contacts.email.label}</a
+        >
       </p>
     </div>
 
-    <p class="flex flex-col gap-1">
-      <button
-        type="submit"
-        class="font-sans py-3 px-6 bg-sky-700 text-white text-lg flex gap-4 items-center justify-center"
-      >
-        {content.submit}
-        <ArrowRight class="text-white-900" />
-      </button>
-    </p>
-  </form>
+    <div class="flex-1">
+      <form class="my-4 md:mt-6 rounded-xs bg-white shadow-sm overflow-clip">
+        <div class="flex flex-col gap-4 p-6">
+          <p class="flex flex-col gap-2">
+            <label for="email" class="text-sm text-gray-500 pl-2"
+              >{content.fields.email.label}</label
+            >
 
-  <p class="py-4 font-light text-gray-700">{content.directContact}</p>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              class="bg-white rounded-sm p-2 text-sm text-gray-700 border border-gray-100"
+              placeholder={content.fields.email.placeholder}
+            />
+          </p>
 
-  <p class="flex gap-4 items-center pb-2">
-    <a
-      href={content.contacts.mobile.href}
-      class="text-xl font-light text-gray-700"
-      >{content.contacts.mobile.label}</a
-    >
-  </p>
-  <p class="flex gap-4 items-center pb-2">
-    <a
-      href={content.contacts.phone.href}
-      class="text-xl font-light text-gray-700">{content.contacts.phone.label}</a
-    >
-  </p>
-  <p class="flex gap-4 items-center pb-2">
-    <a
-      href={content.contacts.email.href}
-      class="text-xl font-light text-gray-700">{content.contacts.email.label}</a
-    >
-  </p>
+          <p class="flex flex-col gap-1 pb-1">
+            <label for="phone" class="text-sm text-gray-500 pl-2"
+              >{content.fields.phone.label}</label
+            >
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              class="bg-white rounded-sm p-2 text-sm text-gray-700 border border-gray-100"
+              placeholder={content.fields.phone.placeholder}
+            />
+          </p>
+
+          <p class="flex flex-col gap-1 pb-1">
+            <label for="message" class="text-sm text-gray-500 pl-2"
+              >{content.fields.message.label}</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              class="bg-white rounded-sm p-2 text-sm text-gray-700 border border-gray-100"
+              placeholder="Proszę o kontakt w sprawie..."></textarea>
+          </p>
+        </div>
+
+        <p class="flex flex-col gap-1">
+          <button
+            type="submit"
+            class="font-sans py-3 px-6 bg-sky-700 text-white text-lg flex gap-4 items-center justify-center"
+          >
+            {content.submit}
+            <ArrowRight class="text-white-900" />
+          </button>
+        </p>
+      </form>
+    </div>
+  </div>
 </section>

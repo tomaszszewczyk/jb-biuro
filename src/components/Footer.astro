@@ -1,7 +1,8 @@
 ---
 const content = {
   company: "Biuro Rachunkowe Joanna Bączar sp. z o.o.",
-  address: ["ul. Mieszka I 17A/1", "58-100 Świdnica"],
+  addressTitle: "Adres",
+  address: ["ul. Mieszka I 17A/1", "58-100 Świdnica", "Polska"],
   contactTitle: "Kontakt",
   contacts: [
     { href: "tel:+48748577566", label: "+48 74 857 75 66" },
@@ -23,65 +24,72 @@ const content = {
 };
 ---
 
-<footer class="px-4 py-8 flex flex-col gap-4 bg-sky-800">
-  <div>
-    <p class="font-serif font-semibold text-lg text-white">
+<footer class="bg-sky-800">
+  <div class="px-4 md:px-8 py-8 flex flex-col gap-4 max-w-5xl mx-auto">
+    <p class="font-serif font-semibold text-lg md:text-xl text-white">
       {content.company}
     </p>
-    <p class="py-1 font-light text-gray-200">
-      {content.address[0]}<br />
-      {content.address[1]}
-    </p>
-  </div>
+    <div class="flex flex-col md:flex-row gap-6 md:gap-16">
+      <div class="flex-1">
+        <p class="font-serif font-semibold text-lg text-white">
+          {content.addressTitle}
+        </p>
+        <p class="py-1 font-light text-gray-200">
+          {content.address[0]}<br />
+          {content.address[1]}<br />
+          {content.address[2]}
+        </p>
+      </div>
+      <div class="flex-1">
+        <p class="font-serif font-semibold text-lg text-white">
+          {content.contactTitle}
+        </p>
+        <p class="py-1 font-light text-gray-200">
+          {
+            content.contacts.map((item, index) => (
+              <>
+                <a href={item.href}>{item.label}</a>
+                {index < content.contacts.length - 1 && <br />}
+              </>
+            ))
+          }
+        </p>
+      </div>
 
-  <div>
-    <p class="font-serif font-semibold text-lg text-white">
-      {content.contactTitle}
-    </p>
-    <p class="py-1 font-light text-gray-200">
-      {
-        content.contacts.map((item, index) => (
-          <>
-            <a href={item.href}>{item.label}</a>
-            {index < content.contacts.length - 1 && <br />}
-          </>
-        ))
-      }
-    </p>
-  </div>
+      <div class="flex-1">
+        <p class="font-serif font-semibold text-lg text-white">
+          {content.companyDataTitle}
+        </p>
+        <ul class="flex flex-col py-1 gap-1">
+          {
+            content.companyData.map((item) => (
+              <li class="flex gap-2 items-baseline">
+                <span class="text-gray-300 w-12 text-xs text-right">
+                  {item.label}
+                </span>
+                <span class="font-light text-gray-200">{item.value}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
 
-  <div>
-    <p class="font-serif font-semibold text-lg text-white">
-      {content.companyDataTitle}
-    </p>
-    <ul class="flex flex-col py-1 gap-1">
-      {
-        content.companyData.map((item) => (
-          <li class="flex gap-2 items-baseline">
-            <span class="text-gray-300 w-12 text-xs text-right">
-              {item.label}
+    <div>
+      <nav class="text-center pt-4 text-white md:text-lg">
+        {
+          content.nav.map((item, index) => (
+            <span>
+              <a href={item.href}>{item.label}</a>
+              {index !== content.nav.length - 1 ? (
+                <span class="px-3">\</span>
+              ) : (
+                ""
+              )}
             </span>
-            <span class="font-light text-gray-200">{item.value}</span>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
-
-  <div>
-    <nav class="text-center pt-4 text-white text-lg">
-      {
-        content.nav.map((item, index) => (
-          <span>
-            <a href={item.href}>{item.label}</a>
-            {index !== content.nav.length - 1 ? (
-              <span class="px-3">\</span>
-            ) : (
-              ""
-            )}
-          </span>
-        ))
-      }
-    </nav>
+          ))
+        }
+      </nav>
+    </div>
   </div>
 </footer>

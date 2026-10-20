@@ -33,23 +33,23 @@ const content = {
     {
       title: "Kadry i płace",
       description:
-        "Zajmujemy się dokumentacją pracowniczą, naliczaniem wynagrodzeń oraz rozliczeniami z\u00A0ZUS.",
+        "Zajmujemy się dokumentacją pracowniczą, naliczaniem wynagrodzeń i\u00A0rozliczeniami z\u00A0ZUS. Prowadzimy kadry na bieżąco, od\u00A0zatrudnienia po\u00A0zakończenie współpracy.",
       items: [
-        "Prowadzenie akt osobowych",
-        "Sporządzanie list płac",
-        "Naliczanie wynagrodzeń",
-        "Obsługa rozliczeń i\u00A0dokumentacji ZUS",
+        "Prowadzenie i\u00A0uzupełnianie akt osobowych pracowników",
+        "Sporządzanie list płac na podstawie danych kadrowych",
+        "Naliczanie wynagrodzeń oraz pozostałych składników płac",
+        "Obsługa rozliczeń z\u00A0ZUS i\u00A0przygotowanie dokumentacji",
       ],
     },
     {
       title: "KSeF i JPK",
       description:
-        "Pomagamy firmom przygotować księgowość do zmieniających się obowiązków podatkowych i\u00A0sprawozdawczych, w\u00A0tym obsługi Krajowego Systemu e-Faktur.",
+        "Pomagamy przygotować księgowość do\u00A0KSeF oraz obowiązków JPK. Dostosowujemy obieg dokumentów i\u00A0ewidencję do\u00A0zmieniających się wymogów sprawozdawczych.",
       items: [
-        "Obsługa faktur w\u00A0KSeF",
-        "Dostosowanie obiegu dokumentów do KSeF",
-        "Przygotowanie ksiąg do raportowania JPK-PD i\u00A0JPK-ST, zgodnie z\u00A0obowiązkami danej firmy",
-        "Dostosowanie ewidencji księgowej do wymaganych znaczników i\u00A0danych podatkowych",
+        "Obsługa faktur wystawianych i\u00A0otrzymywanych w\u00A0KSeF",
+        "Dostosowanie obiegu dokumentów księgowych do\u00A0KSeF",
+        "Przygotowanie ksiąg do\u00A0raportów JPK-PD oraz JPK-ST",
+        "Dostosowanie ewidencji do\u00A0wymaganych danych podatkowych",
       ],
     },
   ],
@@ -61,48 +61,61 @@ const content = {
 };
 ---
 
-<section id="oferta" class="px-4 py-8 bg-gray-50 shadow-sm">
-  <h2 class="font-semibold text-2xl font-serif text-gray-700">
+<section
+  id="oferta"
+  class="px-4 md:px-8 py-8 bg-gray-50 shadow-sm max-w-5xl mx-auto"
+>
+  <h2 class="font-semibold text-2xl md:text-3xl font-serif text-gray-700">
     {content.title}
   </h2>
-  <p class="py-2 font-light text-gray-700">{content.description}</p>
+  <p class="py-2 font-light text-gray-700 max-w-xl">{content.description}</p>
 
-  {
-    content.services.map((service) => (
-      <div class="my-4 rounded-sm bg-white overflow-clip shadow-md">
-        <h3 class="offer-heading relative font-serif font-semibold text-xl text-gray-50 bg-sky-700 px-4 pt-4 pb-3">
-          {service.title}
-        </h3>
-        <div class="px-4 py-3">
-          <p class="py-2 text-gray-600 text-sm hyphens-auto">
-            {service.description}
-          </p>
-          <ul class="flex flex-col gap-4 px-1 py-4">
-            {service.items.map((item) => (
-              <li class="flex gap-2">
-                <CheckIcon class="shrink-0 text-sky-700" />
-                <span class="text-sm pt-0.75 text-gray-600">{item}</span>
-              </li>
-            ))}
-          </ul>
+  <div class="offer-grid mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+    {
+      content.services.map((service) => (
+        <div class="rounded-xs bg-white overflow-clip shadow-md">
+          <h3 class="offer-heading relative font-serif font-semibold text-xl text-gray-50 bg-sky-700 px-4 pt-4 pb-3">
+            {service.title}
+          </h3>
+          <div class="px-4 py-3">
+            <p class="py-2 text-gray-600 text-sm hyphens-auto">
+              {service.description}
+            </p>
+            <ul class="flex flex-col gap-4 px-1 py-4">
+              {service.items.map((item) => (
+                <li class="flex gap-2">
+                  <CheckIcon class="shrink-0 text-sky-700" />
+                  <span class="text-sm pt-0.75 text-gray-600">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </div>
-    ))
-  }
+      ))
+    }
 
-  <div class="rounded-sm my-4 bg-white overflow-clip shadow-md">
-    <h3
-      class="offer-heading relative font-serif font-semibold text-xl text-gray-50 bg-sky-700 px-4 pt-4 pb-3"
-    >
-      {content.grants.title}
-    </h3>
-    <p class="text-gray-600 text-sm p-4 hyphens-auto">
-      {content.grants.description}
-    </p>
+    <div class="rounded-xs bg-white overflow-clip shadow-md">
+      <h3
+        class="offer-heading relative font-serif font-semibold text-xl text-gray-50 bg-sky-700 px-4 pt-4 pb-3"
+      >
+        {content.grants.title}
+      </h3>
+      <p class="text-gray-600 text-sm p-4 hyphens-auto">
+        {content.grants.description}
+      </p>
+    </div>
   </div>
 </section>
 
 <style>
+  @media (min-width: 48rem) {
+    .offer-grid > :last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+      justify-self: center;
+      width: calc(50% - 0.5rem);
+    }
+  }
+
   .offer-heading::before {
     content: "";
     position: absolute;

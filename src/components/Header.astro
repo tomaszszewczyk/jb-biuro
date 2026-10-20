@@ -19,37 +19,43 @@ const content = {
 };
 ---
 
-<header class="shadow-sm">
-  <h1
-    class="p-4 text-4xl font-semibold pb-3 font-serif text-gray-800 pt-16 bg-graph"
-  >
-    {content.title}
-    {" "}
-    <span class="text-sky-700 font-bold underline">{content.title2}</span>
-  </h1>
-  <div class="p-4">
-    <p class="pb-4 font-light text-gray-700">{content.description}</p>
-    <p class="py-4 flex gap-4">
-      <a
-        class="font-sans py-3 px-6 bg-sky-700 text-white border rounded-xs text-lg flex gap-4 items-center"
-        href={content.actions[0].href}
-      >
-        {content.actions[0].label}
-        <ArrowRight class="text-white" />
-      </a>
-    </p>
-    <ul class="py-6 pl-2 flex flex-col gap-6">
-      {
-        content.highlights.map((highlight) => (
-          <li class="flex gap-4 items-center">
-            <CheckIcon class="text-sky-800" />
-            <span class="text-gray-600 text-lg border-b border-gray-400">
-              {highlight}
-            </span>
-          </li>
-        ))
-      }
-    </ul>
+<header class="shadow-sm max-w-5xl mx-auto">
+  <div class="bg-graph">
+    <h1
+      class="p-4 md:px-8 text-4xl font-semibold pb-3 font-serif text-gray-800 pt-16 max-w-xl md:pt-64 md:text-5xl"
+    >
+      {content.title}
+      {" "}
+      <span class="text-sky-700 font-bold underline">{content.title2}</span>
+    </h1>
+  </div>
+  <div class="p-4 md:px-8 md:flex gap-4 md:pt-12">
+    <div class="flex-1">
+      <p class="pb-4 font-light text-gray-700">{content.description}</p>
+      <p class="py-4 flex gap-4">
+        <a
+          class="font-sans py-3 px-6 bg-sky-700 text-white border rounded-xs text-lg flex gap-4 items-center"
+          href={content.actions[0].href}
+        >
+          {content.actions[0].label}
+          <ArrowRight class="text-white" />
+        </a>
+      </p>
+    </div>
+    <div class="flex-1">
+      <ul class="py-6 md:py-0 pl-2 flex flex-col gap-6">
+        {
+          content.highlights.map((highlight) => (
+            <li class="flex gap-4 items-center">
+              <CheckIcon class="text-sky-800" />
+              <span class="text-gray-600 text-lg border-b border-gray-400">
+                {highlight}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </div>
 </header>
 

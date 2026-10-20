@@ -3,17 +3,20 @@ interface Props {
   items: { href: string; label: string }[];
 }
 
-const { items } = Astro.props;
+const { items } = Astro.props as Props;
 ---
 
 <nav class="hidden md:block" aria-label="Główne">
-  <ul class="flex gap-4">
+  <ul class="flex gap-8 text-sm">
     {
       items.map((item, index) => (
         <li>
           <a
             href={item.href}
-            class={index === items.length - 1 ? "font-bold" : ""}
+            class:list={[
+              "hover:underline",
+              index === items.length - 1 ? "font-semibold text-sky-700" : "",
+            ]}
           >
             {item.label}
           </a>

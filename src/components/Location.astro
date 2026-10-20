@@ -15,28 +15,30 @@ const content = {
 };
 ---
 
-<section class="px-4 py-8 bg-gray-50 shadow-sm">
-  <div class="relative">
+<section class="px-4 md:px-8 py-8 bg-gray-50 shadow-sm max-w-5xl mx-auto">
+  <div class="relative md:flex md:items-center md:gap-10">
     <img
       src={polandMap.src}
       alt=""
       width="600"
       height="500"
-      class="pointer-events-none absolute top-1/2 left-1/2 w-64 -translate-x-1/2 -translate-y-1/2 opacity-10"
+      class="pointer-events-none absolute top-1/2 left-1/2 w-64 -translate-x-1/2 -translate-y-1/2 opacity-10 md:pointer-events-auto md:static md:order-last md:w-80 md:shrink-0 md:translate-x-0 md:translate-y-0 md:opacity-100"
     />
     <div class="relative">
-      <h2 class="font-semibold text-2xl font-serif text-gray-700">
+      <h2 class="font-semibold text-2xl md:text-3xl font-serif text-gray-700">
         {content.title}
       </h2>
-      <p class="py-2 text-gray-700">{content.paragraphs[0]}</p>
-      <p class="pt-2 pb-8 text-gray-700">{content.paragraphs[1]}</p>
+      <p class="py-2 text-gray-700 md:font-light">{content.paragraphs[0]}</p>
+      <p class="pt-2 pb-8 text-gray-700 md:font-light md:text-sm">
+        {content.paragraphs[1]}
+      </p>
+      <a
+        href={content.action.href}
+        class="shadow-sm font-sans py-3 px-6 bg-sky-700 text-white rounded-xs text-lg inline-flex gap-4 items-center"
+      >
+        {content.action.label}
+        <ArrowRight class="text-white" />
+      </a>
     </div>
   </div>
-  <a
-    href={content.action.href}
-    class="shadow-sm font-sans py-3 px-6 bg-sky-700 text-white rounded-xs text-lg inline-flex gap-4 items-center"
-  >
-    {content.action.label}
-    <ArrowRight class="text-white" />
-  </a>
 </section>
