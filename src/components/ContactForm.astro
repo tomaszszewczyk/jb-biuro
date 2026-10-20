@@ -1,0 +1,106 @@
+---
+import MailIcon from "./icons/MailIcon.astro";
+import MobilePhoneIcon from "./icons/MobilePhoneIcon.astro";
+import OfficeIcon from "./icons/OfficeIcon.astro";
+import PhoneIcon from "./icons/PhoneIcon.astro";
+
+const content = {
+  title: "Porozmawiajmy o księgowości Twojej firmy",
+  intro: [
+    "Szukasz biura rachunkowego lub planujesz zmianę dotychczasowej obsługi księgowej?",
+    "Opisz krótko swoją firmę i zakres potrzebnych usług. Skontaktujemy się z Tobą, aby omówić możliwości współpracy.",
+  ],
+  fields: {
+    email: { label: "Adres e-mail", placeholder: "mail@poczta.pl" },
+    phone: { label: "Telefon", placeholder: "000 000 000" },
+    message: { label: "Wiadomość" },
+  },
+  submit: "Wyślij zapytanie",
+  directContact: "Możesz również skontaktować się z nami bezpośrednio.",
+  contacts: {
+    mobile: { href: "tel:+48693368459", label: "693 368 459" },
+    phone: { href: "tel:+48748577566", label: "74 857 75 66" },
+    email: {
+      href: "mailto:ksiegowosctwoja@wp.pl",
+      label: "ksiegowosctwoja@wp.pl",
+    },
+    address: ["ul. Mieszka I 17A/1", "58-100 Świdnica"],
+  },
+};
+---
+
+<section id="kontakt" class="p-4">
+  <h2 class="font-bold text-xl">{content.title}</h2>
+  {content.intro.map((paragraph) => <p class="py-2">{paragraph}</p>)}
+
+  <form class="flex flex-col gap-2">
+    <p class="flex flex-col gap-1">
+      <label for="email" class="text-sm text-gray-600"
+        >{content.fields.email.label}</label
+      >
+      <input
+        id="email"
+        name="email"
+        type="email"
+        required
+        class="border border-gray-300 p-1"
+        placeholder={content.fields.email.placeholder}
+      />
+    </p>
+
+    <p class="flex flex-col gap-1 pb-1">
+      <label for="phone" class="text-sm text-gray-600"
+        >{content.fields.phone.label}</label
+      >
+      <input
+        id="phone"
+        name="phone"
+        type="tel"
+        class="border border-gray-300 p-1"
+        placeholder={content.fields.phone.placeholder}
+      />
+    </p>
+
+    <p class="flex flex-col gap-1 pb-1">
+      <label for="message" class="text-sm text-gray-600"
+        >{content.fields.message.label}</label
+      >
+      <textarea id="message" name="message" class="border border-gray-300 p-1"
+      ></textarea>
+    </p>
+
+    <p class="flex flex-col gap-1 pb-1">
+      <button type="submit" class="py-2 px-4 bg-gray-100"
+        >{content.submit}</button
+      >
+    </p>
+  </form>
+
+  <p class="py-4">{content.directContact}</p>
+
+  <div class="flex flex-col gap-4">
+    <p class="flex gap-4 items-center bg-gray-100 p-3">
+      <MobilePhoneIcon class="shrink-0 w-6" />
+      <a href={content.contacts.mobile.href} class="text-xl"
+        >{content.contacts.mobile.label}</a
+      >
+    </p>
+    <p class="flex gap-4 items-center bg-gray-100 p-3">
+      <PhoneIcon class="shrink-0 w-6" />
+      <a href={content.contacts.phone.href} class="text-xl"
+        >{content.contacts.phone.label}</a
+      >
+    </p>
+    <p class="flex gap-4 items-center bg-gray-100 p-3">
+      <MailIcon class="shrink-0 w-6" />
+      <a href={content.contacts.email.href} class="text-xl"
+        >{content.contacts.email.label}</a
+      >
+    </p>
+    <p class="flex gap-4 text-xl bg-gray-100 p-3">
+      <OfficeIcon class="mt-1" />
+      {content.contacts.address[0]}<br />
+      {content.contacts.address[1]}
+    </p>
+  </div>
+</section>

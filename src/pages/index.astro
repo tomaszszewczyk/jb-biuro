@@ -1,12 +1,14 @@
 ---
 import About from "../components/About.astro";
-import CheckIcon from "../components/CheckIcon.astro";
+import CheckIcon from "../components/icons/CheckIcon.astro";
 import Header from "../components/Header.astro";
 import Nav from "../components/Nav.astro";
 import Offer from "../components/Offer.astro";
 import Location from "../components/Location.astro";
 import "../styles/global.css";
 import Pricing from "../components/Pricing.astro";
+import ContactForm from "../components/ContactForm.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <!-- personality: professional, trustworthy -->
@@ -39,81 +41,9 @@ import Pricing from "../components/Pricing.astro";
       <hr class="text-gray-300" />
       <Pricing />
       <hr class="text-gray-300" />
-
-      <section id="kontakt">
-        <h2>Porozmawiajmy o księgowości Twojej firmy</h2>
-        <p>
-          Szukasz biura rachunkowego lub planujesz zmianę dotychczasowej obsługi
-          księgowej? Opisz krótko swoją firmę i zakres potrzebnych usług.
-          Skontaktujemy się z Tobą, aby omówić możliwości współpracy.
-        </p>
-
-        <form>
-          <p>
-            <label for="email">Adres e-mail</label>
-            <input id="email" name="email" type="email" required />
-          </p>
-          <p>
-            <label for="phone">Numer telefonu (opcjonalnie)</label>
-            <input id="phone" name="phone" type="tel" />
-          </p>
-          <p>
-            <label for="message">Wiadomość (opcjonalnie)</label>
-            <textarea id="message" name="message"></textarea>
-          </p>
-          <p>
-            <button type="submit">Wyślij zapytanie</button>
-          </p>
-        </form>
-
-        <p>Możesz również skontaktować się z nami bezpośrednio.</p>
-        <p>
-          Telefon:
-          <a href="tel:+48693368459">693 368 459</a>
-        </p>
-        <p>
-          Telefon stacjonarny:
-          <a href="tel:+48748577566">74 857 75 66</a>
-        </p>
-        <p>
-          E-mail:
-          <a href="mailto:ksiegowosctwoja@wp.pl">ksiegowosctwoja@wp.pl</a>
-        </p>
-        <p>
-          Adres biura:<br />
-          ul. Mieszka I 17A/1<br />
-          58-100 Świdnica
-        </p>
-      </section>
+      <ContactForm />
     </main>
 
-    <footer>
-      <p><strong>Biuro Rachunkowe Joanna Bączar sp. z o.o.</strong></p>
-      <p>
-        ul. Mieszka I 17A/1<br />
-        58-100 Świdnica
-      </p>
-
-      <p><strong>Kontakt</strong></p>
-      <p>
-        <a href="tel:+48748577566">74 857 75 66</a><br />
-        <a href="tel:+48693368459">693 368 459</a><br />
-        <a href="mailto:ksiegowosctwoja@wp.pl">ksiegowosctwoja@wp.pl</a>
-      </p>
-
-      <p><strong>Dane firmy</strong></p>
-      <p>
-        NIP: 8842774143<br />
-        REGON: 366617754<br />
-        KRS: 0000664955
-      </p>
-
-      <nav>
-        <a href="#oferta">Oferta</a>
-        <a href="#o-nas">O nas</a>
-        <a href="#cennik">Cennik</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
-    </footer>
+    <Footer />
   </body>
 </html>

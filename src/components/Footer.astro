@@ -1,0 +1,79 @@
+---
+const content = {
+  company: "Biuro Rachunkowe Joanna Bączar sp. z o.o.",
+  address: ["ul. Mieszka I 17A/1", "58-100 Świdnica"],
+  contactTitle: "Kontakt",
+  contacts: [
+    { href: "tel:+48748577566", label: "74 857 75 66" },
+    { href: "tel:+48693368459", label: "693 368 459" },
+    { href: "mailto:ksiegowosctwoja@wp.pl", label: "ksiegowosctwoja@wp.pl" },
+  ],
+  companyDataTitle: "Dane firmy",
+  companyData: [
+    { label: "NIP", value: "8842774143" },
+    { label: "REGON", value: "366617754" },
+    { label: "KRS", value: "0000664955" },
+  ],
+  nav: [
+    { href: "#oferta", label: "Oferta" },
+    { href: "#o-nas", label: "O nas" },
+    { href: "#cennik", label: "Cennik" },
+    { href: "#kontakt", label: "Kontakt" },
+  ],
+};
+---
+
+<footer class="p-4 flex flex-col gap-4">
+  <div>
+    <p><strong>{content.company}</strong></p>
+    <p>
+      {content.address[0]}<br />
+      {content.address[1]}
+    </p>
+  </div>
+
+  <div>
+    <p><strong>{content.contactTitle}</strong></p>
+    <p>
+      {
+        content.contacts.map((item, index) => (
+          <>
+            <a href={item.href}>{item.label}</a>
+            {index < content.contacts.length - 1 && <br />}
+          </>
+        ))
+      }
+    </p>
+  </div>
+
+  <div>
+    <p><strong>{content.companyDataTitle}</strong></p>
+    <ul class="flex flex-col">
+      {
+        content.companyData.map((item) => (
+          <li class="flex gap-2 items-baseline">
+            <span class="w-12 text-sm">{item.label}</span>
+            <span>{item.value}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  <div>
+    <nav class="text-center pt-4">
+      {
+        content.nav.map((item, index) => (
+          <span>
+            <a href={item.href}>{item.label}</a>
+            {index !== content.nav.length - 1 ? (
+              <span class="px-2">|</span>
+            ) : (
+              ""
+            )}
+          </span>
+        ))
+      }
+    </nav>
+  </div>
+</footer>
