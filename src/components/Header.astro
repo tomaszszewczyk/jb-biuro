@@ -3,7 +3,8 @@ import CheckIcon from "../components/icons/CheckIcon.astro";
 import ArrowRight from "./icons/ArrowRight.astro";
 
 const content = {
-  title: "Księgowość dopasowana do potrzeb Twojej firmy",
+  title: "Księgowość dopasowana do potrzeb",
+  title2: "Twojej firmy",
   description:
     "Prowadzimy pełną księgowość, KPiR i\u00A0ryczałt oraz zapewniamy obsługę kadr i\u00A0płac. Od prawie 30\u00A0lat wspieramy przedsiębiorców w\u00A0prowadzeniu księgowości i\u00A0realizacji obowiązków podatkowych.",
   actions: [
@@ -19,13 +20,15 @@ const content = {
 ---
 
 <header class="p-4 mb-2">
-  <h1 class="text-4xl font-semibold pb-3 font-serif text-gray-800">
+  <h1 class="text-4xl font-semibold pb-3 font-serif text-gray-800 pt-16">
     {content.title}
+    {" "}
+    <span class="text-sky-700 font-bold underline">{content.title2}</span>
   </h1>
   <p class="pb-4 font-light text-gray-700">{content.description}</p>
   <p class="py-4 flex gap-4">
     <a
-      class="font-sans py-3 px-6 border-gray-800 bg-gray-800 text-white border rounded-xs text-lg flex gap-4 items-center"
+      class="font-sans py-3 px-6 bg-sky-700 text-white border rounded-xs text-lg flex gap-4 items-center"
       href={content.actions[0].href}
     >
       {content.actions[0].label}
@@ -36,8 +39,8 @@ const content = {
     {
       content.highlights.map((highlight) => (
         <li class="flex gap-4 items-center">
-          <CheckIcon class="text-gray-600" />
-          <span class="text-gray-800 text-lg border-b font-light">
+          <CheckIcon class="text-sky-800" />
+          <span class="text-gray-600 text-lg border-b border-gray-400">
             {highlight}
           </span>
         </li>

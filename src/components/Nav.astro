@@ -11,17 +11,26 @@ const items = [
 ];
 ---
 
-<header class="sticky top-0 z-10 bg-white flex justify-between p-4">
-  <div class="text-gray-800">Biuro Rachunkowe Joanna Bączar</div>
-  <button
-    type="button"
-    class="relative z-20 md:hidden"
-    aria-expanded="false"
-    aria-controls="site-nav"
-    data-nav-toggle
+<header class="sticky top-0 z-10 shadow-sm">
+  <div
+    class="absolute inset-0 -z-10 bg-white/70 backdrop-blur-xl"
+    aria-hidden="true"
   >
-    <MenuIcon class="text-gray-800" />
-  </button>
+  </div>
+  <div class="w-full h-2 bg-sky-600"></div>
+  <div class="flex justify-between p-4">
+    <div class="text-gray-800 font-medium">Biuro Rachunkowe Joanna Bączar</div>
+    <button
+      type="button"
+      class="relative z-20 md:hidden"
+      aria-expanded="false"
+      aria-controls="site-nav"
+      data-nav-toggle
+    >
+      <MenuIcon class="text-gray-800" />
+    </button>
+  </div>
+
   <MobileNav items={items} />
   <DesktopNav items={items} />
 </header>
