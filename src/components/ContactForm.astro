@@ -14,7 +14,7 @@ const content = {
   ],
   fields: {
     email: { label: "Adres e-mail", placeholder: "mail@poczta.pl" },
-    phone: { label: "Telefon", placeholder: "000 000 000" },
+    phone: { label: "Telefon", placeholder: "+48 ..." },
     message: { label: "Wiadomość" },
   },
   submit: "Wyślij zapytanie",
@@ -31,7 +31,7 @@ const content = {
 };
 ---
 
-<section id="kontakt" class="p-4">
+<section id="kontakt" class="p-4 bg-gray-50">
   <h2 class="font-semibold text-2xl font-serif text-gray-700">
     {content.title}
   </h2>
@@ -41,85 +41,78 @@ const content = {
     ))
   }
 
-  <form
-    class="my-4 pt-4 flex flex-col gap-4 border p-4 rounded-sm border-gray-300"
-  >
-    <p class="flex flex-col gap-2">
-      <label for="email" class="text-sm text-gray-600 pl-2"
-        >{content.fields.email.label}</label
-      >
-      <input
-        id="email"
-        name="email"
-        type="email"
-        required
-        class="border border-gray-300 rounded-sm p-2 text-sm text-gray-700"
-        placeholder={content.fields.email.placeholder}
-      />
-    </p>
+  <form class="my-4 rounded-xs bg-white shadow-sm overflow-clip">
+    <div class="flex flex-col gap-4 p-6">
+      <p class="flex flex-col gap-2">
+        <label for="email" class="text-sm text-gray-500 pl-2"
+          >{content.fields.email.label}</label
+        >
 
-    <p class="flex flex-col gap-1 pb-1">
-      <label for="phone" class="text-sm text-gray-600 pl-2"
-        >{content.fields.phone.label}</label
-      >
-      <input
-        id="phone"
-        name="phone"
-        type="tel"
-        class="border border-gray-300 rounded-sm p-2 text-sm text-gray-700"
-        placeholder={content.fields.phone.placeholder}
-      />
-    </p>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          class="bg-white rounded-sm p-2 text-sm text-gray-700 border border-gray-100"
+          placeholder={content.fields.email.placeholder}
+        />
+      </p>
 
-    <p class="flex flex-col gap-1 pb-1">
-      <label for="message" class="text-sm text-gray-600 pl-2"
-        >{content.fields.message.label}</label
-      >
-      <textarea
-        id="message"
-        name="message"
-        class="border border-gray-300 p-2 rounded-sm text-sm text-gray-700"
-        placeholder="Proszę o kontakt w sprawie..."></textarea>
-    </p>
+      <p class="flex flex-col gap-1 pb-1">
+        <label for="phone" class="text-sm text-gray-500 pl-2"
+          >{content.fields.phone.label}</label
+        >
+        <input
+          id="phone"
+          name="phone"
+          type="tel"
+          class="bg-white rounded-sm p-2 text-sm text-gray-700 border border-gray-100"
+          placeholder={content.fields.phone.placeholder}
+        />
+      </p>
 
-    <p class="flex flex-col gap-1 pb-2">
+      <p class="flex flex-col gap-1 pb-1">
+        <label for="message" class="text-sm text-gray-500 pl-2"
+          >{content.fields.message.label}</label
+        >
+        <textarea
+          id="message"
+          name="message"
+          class="bg-white rounded-sm p-2 text-sm text-gray-700 border border-gray-100"
+          placeholder="Proszę o kontakt w sprawie..."></textarea>
+      </p>
+    </div>
+
+    <p class="flex flex-col gap-1">
       <button
         type="submit"
-        class="font-sans py-3 px-6 border-gray-800 bg-gray-800 text-white border rounded-xs text-lg flex gap-4 items-center"
+        class="font-sans py-3 px-6 bg-sky-700 text-white text-lg flex gap-4 items-center justify-center"
       >
         {content.submit}
-        <ArrowRight class="text-white" />
+        <ArrowRight class="text-white-900" />
       </button>
     </p>
   </form>
 
   <p class="py-4 font-light text-gray-700">{content.directContact}</p>
 
-  <div class="flex flex-col border border-gray-300 rounded-sm px-6 py-2 mb-8">
-    <p class="flex gap-4 items-center py-4 border-b border-gray-300">
-      <MobilePhoneIcon class="shrink-0 w-6 text-gray-600" />
-      <a href={content.contacts.mobile.href} class="text-lg text-gray-700"
-        >{content.contacts.mobile.label}</a
-      >
-    </p>
-    <p class="flex gap-4 items-center py-4 border-b border-gray-300">
-      <PhoneIcon class="shrink-0 w-6 text-gray-600" />
-      <a href={content.contacts.phone.href} class="text-lg text-gray-700"
-        >{content.contacts.phone.label}</a
-      >
-    </p>
-    <p class="flex gap-4 items-center py-4 border-b border-gray-300">
-      <MailIcon class="shrink-0 w-6 text-gray-600" />
-      <a href={content.contacts.email.href} class="text-lg text-gray-700"
-        >{content.contacts.email.label}</a
-      >
-    </p>
-    <p class="flex gap-4 text-lg py-4">
-      <OfficeIcon class="mt-1 text-gray-600" />
-      <span class="text-gray-600">
-        {content.contacts.address[0]}<br />
-        {content.contacts.address[1]}
-      </span>
-    </p>
-  </div>
+  <p class="flex gap-4 items-center pb-2">
+    <a
+      href={content.contacts.mobile.href}
+      class="text-xl font-light text-gray-700"
+      >{content.contacts.mobile.label}</a
+    >
+  </p>
+  <p class="flex gap-4 items-center pb-2">
+    <a
+      href={content.contacts.phone.href}
+      class="text-xl font-light text-gray-700">{content.contacts.phone.label}</a
+    >
+  </p>
+  <p class="flex gap-4 items-center pb-2">
+    <a
+      href={content.contacts.email.href}
+      class="text-xl font-light text-gray-700">{content.contacts.email.label}</a
+    >
+  </p>
 </section>

@@ -1,5 +1,6 @@
 ---
 import ArrowRight from "./icons/ArrowRight.astro";
+import polandMap from "../assets/poland-map.svg";
 
 const content = {
   title: "Twoja księgowość, niezależnie od lokalizacji",
@@ -14,15 +15,26 @@ const content = {
 };
 ---
 
-<section class="px-4 py-8">
-  <h2 class="font-semibold text-2xl font-serif text-gray-700">
-    {content.title}
-  </h2>
-  <p class="py-2 font-light text-gray-700">{content.paragraphs[0]}</p>
-  <p class="pt-2 pb-8 font-light text-gray-700">{content.paragraphs[1]}</p>
+<section class="px-4 py-8 bg-gray-50 shadow-sm">
+  <div class="relative">
+    <img
+      src={polandMap.src}
+      alt=""
+      width="600"
+      height="500"
+      class="pointer-events-none absolute top-1/2 left-1/2 w-64 -translate-x-1/2 -translate-y-1/2 opacity-10"
+    />
+    <div class="relative">
+      <h2 class="font-semibold text-2xl font-serif text-gray-700">
+        {content.title}
+      </h2>
+      <p class="py-2 text-gray-700">{content.paragraphs[0]}</p>
+      <p class="pt-2 pb-8 text-gray-700">{content.paragraphs[1]}</p>
+    </div>
+  </div>
   <a
     href={content.action.href}
-    class="font-sans py-3 px-6 border-gray-800 bg-gray-800 text-white border rounded-xs text-lg inline-flex gap-4 items-center"
+    class="shadow-sm font-sans py-3 px-6 bg-sky-700 text-white rounded-xs text-lg inline-flex gap-4 items-center"
   >
     {content.action.label}
     <ArrowRight class="text-white" />

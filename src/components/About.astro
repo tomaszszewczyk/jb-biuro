@@ -2,13 +2,8 @@
 const content = {
   title: "Doświadczenie, na którym możesz polegać",
   description:
-    "Jesteśmy biurem rachunkowym ze Świdnicy, działającym na rynku usług księgowych od prawie 30\u00A0lat. Łączymy wieloletnią praktykę z\u00A0aktualną wiedzą podatkową i\u00A0nowoczesnymi narzędziami księgowymi.",
+    "Jesteśmy biurem rachunkowym ze Świdnicy, działającym na rynku usług księgowych od prawie 30\u00A0lat. Od lat obsługujemy przedsiębiorców, prowadząc księgi rachunkowe, rozliczenia podatkowe oraz sprawy kadrowo-płacowe. Łączymy wieloletnią praktykę z\u00A0aktualną wiedzą podatkową i\u00A0nowoczesnymi narzędziami księgowymi.",
   points: [
-    {
-      title: "Wieloletnie doświadczenie",
-      description:
-        "Od lat obsługujemy przedsiębiorców, prowadząc księgi rachunkowe, rozliczenia podatkowe oraz sprawy kadrowo-płacowe.",
-    },
     {
       title: "Aktualna wiedza i kwalifikacje",
       description:
@@ -23,11 +18,13 @@ const content = {
 };
 ---
 
-<section id="o-nas" class="px-4 pt-8">
+<section id="o-nas" class="px-4 pt-8 shadow-sm">
   <h2 class="font-semibold text-2xl font-serif text-gray-700 pb-4">
     {content.title}
   </h2>
-  <p class="pb-8 font-light text-gray-700">{content.description}</p>
+  <p class="pb-8 font-light text-gray-700 hyphens-auto">
+    {content.description}
+  </p>
 
   {
     content.points.map((point) => (
@@ -35,7 +32,9 @@ const content = {
         <h3 class="font-semibold text-xl font-serif text-gray-700 pb-2">
           {point.title}
         </h3>
-        <p class="pb-8 font-light text-gray-700">{point.description}</p>
+        <p class="pb-8 font-light text-gray-700 hyphens-auto">
+          {point.description}
+        </p>
       </>
     ))
   }

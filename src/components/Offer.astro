@@ -61,7 +61,7 @@ const content = {
 };
 ---
 
-<section id="oferta" class="px-4 py-8">
+<section id="oferta" class="px-4 py-8 bg-gray-50 shadow-sm">
   <h2 class="font-semibold text-2xl font-serif text-gray-700">
     {content.title}
   </h2>
@@ -69,27 +69,53 @@ const content = {
 
   {
     content.services.map((service) => (
-      <div class="border border-gray-200 p-4 my-4 rounded-xs">
-        <h3 class="font-serif font-semibold text-xl text-gray-700">
+      <div class="my-4 rounded-sm bg-white overflow-clip shadow-md">
+        <h3 class="offer-heading relative font-serif font-semibold text-xl text-gray-50 bg-sky-700 px-4 pt-4 pb-3">
           {service.title}
         </h3>
-        <p class="py-2 text-gray-600 text-sm">{service.description}</p>
-        <ul class="flex flex-col gap-4 px-1 py-4">
-          {service.items.map((item) => (
-            <li class="flex gap-2">
-              <CheckIcon class="shrink-0 text-gray-600" />
-              <span class="text-sm pt-0.75 text-gray-600">{item}</span>
-            </li>
-          ))}
-        </ul>
+        <div class="px-4 py-3">
+          <p class="py-2 text-gray-600 text-sm hyphens-auto">
+            {service.description}
+          </p>
+          <ul class="flex flex-col gap-4 px-1 py-4">
+            {service.items.map((item) => (
+              <li class="flex gap-2">
+                <CheckIcon class="shrink-0 text-sky-700" />
+                <span class="text-sm pt-0.75 text-gray-600">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     ))
   }
 
-  <div class="border border-gray-200 rounded-xs p-4 my-4">
-    <h3 class="font-serif font-semibold text-xl text-gray-700">
+  <div class="rounded-sm my-4 bg-white overflow-clip shadow-md">
+    <h3
+      class="offer-heading relative font-serif font-semibold text-xl text-gray-50 bg-sky-700 px-4 pt-4 pb-3"
+    >
       {content.grants.title}
     </h3>
-    <p class="py-2 text-gray-600 text-sm">{content.grants.description}</p>
+    <p class="text-gray-600 text-sm p-4 hyphens-auto">
+      {content.grants.description}
+    </p>
   </div>
 </section>
+
+<style>
+  .offer-heading::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgb(255 255 255 / 0.3);
+    pointer-events: none;
+    mask-image:
+      linear-gradient(to right, transparent, 80%, black),
+      url("../assets/bank-note.png");
+    mask-repeat: no-repeat, repeat;
+    mask-size:
+      100% 100%,
+      50px 10px;
+    mask-composite: intersect;
+  }
+</style>
