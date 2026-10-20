@@ -5,15 +5,15 @@ import ArrowRight from "./icons/ArrowRight.astro";
 const content = {
   title: "Księgowość dopasowana do potrzeb Twojej firmy",
   description:
-    "Prowadzimy pełną księgowość, KPiR i ryczałt oraz zapewniamy obsługę kadr i płac. Od prawie 30 lat wspieramy przedsiębiorców w prowadzeniu księgowości i realizacji obowiązków podatkowych.",
+    "Prowadzimy pełną księgowość, KPiR i\u00A0ryczałt oraz zapewniamy obsługę kadr i\u00A0płac. Od prawie 30\u00A0lat wspieramy przedsiębiorców w\u00A0prowadzeniu księgowości i\u00A0realizacji obowiązków podatkowych.",
   actions: [
     { href: "#kontakt", label: "Zapytaj o ofertę" },
     { href: "#oferta", label: "Poznaj nasze usługi" },
   ],
   highlights: [
-    "Prawie 30 lat doświadczenia",
-    "Obsługa firm z całej Polski",
-    "Współpraca stacjonarna i zdalna",
+    "Prawie 30\u00A0lat doświadczenia",
+    "Obsługa firm z\u00A0całej Polski",
+    "Współpraca stacjonarna i\u00A0zdalna",
   ],
 };
 ---
@@ -37,7 +37,9 @@ const content = {
       content.highlights.map((highlight) => (
         <li class="flex gap-4 items-center">
           <CheckIcon class="text-gray-600" />
-          <span class="text-gray-700 text-lg border-b">{highlight}</span>
+          <span class="text-gray-800 text-lg border-b font-light">
+            {highlight}
+          </span>
         </li>
       ))
     }
