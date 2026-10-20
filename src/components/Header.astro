@@ -19,32 +19,53 @@ const content = {
 };
 ---
 
-<header class="p-4 shadow-sm">
-  <h1 class="text-4xl font-semibold pb-3 font-serif text-gray-800 pt-16">
+<header class="shadow-sm">
+  <h1
+    class="p-4 text-4xl font-semibold pb-3 font-serif text-gray-800 pt-16 bg-graph"
+  >
     {content.title}
     {" "}
     <span class="text-sky-700 font-bold underline">{content.title2}</span>
   </h1>
-  <p class="pb-4 font-light text-gray-700">{content.description}</p>
-  <p class="py-4 flex gap-4">
-    <a
-      class="font-sans py-3 px-6 bg-sky-700 text-white border rounded-xs text-lg flex gap-4 items-center"
-      href={content.actions[0].href}
-    >
-      {content.actions[0].label}
-      <ArrowRight class="text-white" />
-    </a>
-  </p>
-  <ul class="py-6 pl-2 flex flex-col gap-6">
-    {
-      content.highlights.map((highlight) => (
-        <li class="flex gap-4 items-center">
-          <CheckIcon class="text-sky-800" />
-          <span class="text-gray-600 text-lg border-b border-gray-400">
-            {highlight}
-          </span>
-        </li>
-      ))
-    }
-  </ul>
+  <div class="p-4">
+    <p class="pb-4 font-light text-gray-700">{content.description}</p>
+    <p class="py-4 flex gap-4">
+      <a
+        class="font-sans py-3 px-6 bg-sky-700 text-white border rounded-xs text-lg flex gap-4 items-center"
+        href={content.actions[0].href}
+      >
+        {content.actions[0].label}
+        <ArrowRight class="text-white" />
+      </a>
+    </p>
+    <ul class="py-6 pl-2 flex flex-col gap-6">
+      {
+        content.highlights.map((highlight) => (
+          <li class="flex gap-4 items-center">
+            <CheckIcon class="text-sky-800" />
+            <span class="text-gray-600 text-lg border-b border-gray-400">
+              {highlight}
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </header>
+
+<style>
+  .bg-graph {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .bg-graph::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: url("../assets/graph-paper.svg");
+    background-repeat: repeat;
+    mask-image: radial-gradient(circle at bottom left, transparent 30%, black);
+  }
+</style>
