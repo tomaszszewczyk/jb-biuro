@@ -3,7 +3,7 @@ interface Props {
   items: { href: string; label: string }[];
 }
 
-const { items } = Astro.props;
+const { items } = Astro.props as Props;
 ---
 
 <nav
@@ -18,7 +18,10 @@ const { items } = Astro.props;
         <li>
           <a
             href={item.href}
-            class={index === items.length - 1 ? "font-bold" : ""}
+            class:list={[
+              "text-xl text-gray-800",
+              index === items.length - 1 ? "font-bold" : "",
+            ]}
           >
             {item.label}
           </a>

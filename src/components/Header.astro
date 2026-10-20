@@ -1,5 +1,6 @@
 ---
 import CheckIcon from "../components/icons/CheckIcon.astro";
+import ArrowRight from "./icons/ArrowRight.astro";
 
 const content = {
   title: "Księgowość dopasowana do potrzeb Twojej firmy",
@@ -17,26 +18,26 @@ const content = {
 };
 ---
 
-<header class="p-4">
-  <h1 class="text-4xl font-bold pb-4">{content.title}</h1>
-  <p class="pb-4">{content.description}</p>
-  <p class="pb-4 flex gap-4">
-    <a class="py-2 px-4 bg-gray-100" href={content.actions[0].href}>
-      {content.actions[0].label}
-    </a>
+<header class="p-4 mb-2">
+  <h1 class="text-4xl font-semibold pb-3 font-serif text-gray-800">
+    {content.title}
+  </h1>
+  <p class="pb-4 font-light text-gray-700">{content.description}</p>
+  <p class="py-4 flex gap-4">
     <a
-      class="py-2 px-4 border-gray-100 border-2"
-      href={content.actions[1].href}
+      class="font-sans py-3 px-6 border-gray-800 bg-gray-800 text-white border rounded-xs text-lg flex gap-4 items-center"
+      href={content.actions[0].href}
     >
-      {content.actions[1].label}
+      {content.actions[0].label}
+      <ArrowRight class="text-white" />
     </a>
   </p>
-  <ul class="py-4 pl-4 flex flex-col gap-4">
+  <ul class="py-6 pl-2 flex flex-col gap-6">
     {
       content.highlights.map((highlight) => (
-        <li class="flex gap-2">
-          <CheckIcon class="text-gray-500" />
-          <span>{highlight}</span>
+        <li class="flex gap-4 items-center">
+          <CheckIcon class="text-gray-600" />
+          <span class="text-gray-700 text-lg border-b">{highlight}</span>
         </li>
       ))
     }

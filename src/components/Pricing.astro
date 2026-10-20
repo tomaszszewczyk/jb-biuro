@@ -1,26 +1,29 @@
 ---
+import ArrowRight from "./icons/ArrowRight.astro";
+
 const content = {
   title: "Cennik usług księgowych",
   description:
     "Poznaj orientacyjne koszty obsługi księgowej. Cena zależy od liczby dokumentów i zakresu świadczonych usług.",
   fullAccounting: {
     title: "Pełna księgowość",
+    slug: "netto / miesiąc",
     tiers: [
       {
-        label: "Do 10 dokumentów miesięcznie",
-        price: "800 zł netto / miesiąc",
+        label: "Do 10 dokumentów",
+        price: "800 zł",
       },
       {
-        label: "11-30 dokumentów miesięcznie",
-        price: "1 500 zł netto / miesiąc",
+        label: "11-30 dokumentów",
+        price: "1 500 zł",
       },
       {
-        label: "31-50 dokumentów miesięcznie",
-        price: "2 000 zł netto / miesiąc",
+        label: "31-50 dokumentów",
+        price: "2 000 zł",
       },
     ],
     custom: {
-      label: "Powyżej 50 dokumentów miesięcznie",
+      label: "Powyżej 50 dokumentów",
       price: "Wycena indywidualna",
     },
     note: "Do podanych cen należy doliczyć podatek VAT.",
@@ -29,7 +32,8 @@ const content = {
     title: "Kadry i płace",
     description:
       "Prowadzenie akt osobowych, sporządzanie list płac i obsługa rozliczeń ZUS.",
-    price: "70 zł netto / pracownik / miesiąc",
+    price: "70 zł",
+    slug: "netto / pracownik / miesiąc",
   },
   customQuote: {
     title: "Potrzebujesz szerszego zakresu usług?",
@@ -43,41 +47,73 @@ const content = {
 };
 ---
 
-<section id="cennik" class="p-4">
-  <h2 class="font-bold text-xl">{content.title}</h2>
-  <p class="py-2">{content.description}</p>
+<section id="cennik" class="px-4 py-8">
+  <h2 class="font-semibold text-2xl font-serif text-gray-700">
+    {content.title}
+  </h2>
+  <p class="pt-2 pb-6 font-light text-gray-700">
+    {content.description}
+  </p>
 
-  <h3 class="font-bold pb-2">{content.fullAccounting.title}</h3>
+  <h3 class="font-serif font-semibold text-xl text-gray-700 pb-2">
+    {content.fullAccounting.title}
+  </h3>
 
   {
     content.fullAccounting.tiers.map((tier) => (
-      <div class="border border-gray-100 p-2 mb-4">
-        <p class="text-sm">{tier.label}</p>
-        <p class="font-bold">{tier.price}</p>
+      <div class="border border-gray-300 rounded-sm p-4 mb-4">
+        <p class="text-sm pb-2 text-gray-600">{tier.label}</p>
+        <div class="flex items-baseline gap-2">
+          <p class="font-serif text-3xl text-gray-800">{tier.price}</p>
+          <p class="font-serif text-xl text-gray-800">
+            {content.fullAccounting.slug}
+          </p>
+        </div>
       </div>
     ))
   }
 
-  <div class="border border-gray-100 p-2 mb-6">
-    <p class="text-sm">{content.fullAccounting.custom.label}</p>
-    <p class="font-bold">{content.fullAccounting.custom.price}</p>
+  <div class="border border-gray-300 rounded-sm p-4 mb-8">
+    <p class="text-sm pb-2 text-gray-600">
+      {content.fullAccounting.custom.label}
+    </p>
+    <p class="font-serif text-2xl text-gray-800 font-medium">
+      {content.fullAccounting.custom.price}
+    </p>
   </div>
 
-  <h3 class="font-bold mb-2">{content.payroll.title}</h3>
+  <h3 class="font-serif font-semibold text-xl text-gray-700 pb-2">
+    {content.payroll.title}
+  </h3>
 
-  <div class="border border-gray-100 p-2">
-    <p class="py-2 text-sm">{content.payroll.description}</p>
-    <p class="font-bold pb-2">{content.payroll.price}</p>
+  <div class="border border-gray-300 rounded-sm p-4 mb-4">
+    <p class="text-sm pb-2 text-gray-600">{content.payroll.description}</p>
+    <div class="flex items-baseline gap-2">
+      <p class="font-serif text-3xl text-gray-800">{content.payroll.price}</p>
+      <p class="font-serif text-xl text-gray-800">
+        {content.payroll.slug}
+      </p>
+    </div>
   </div>
 
-  <p class="text-sm pb-4 pt-2">{content.fullAccounting.note}</p>
+  <p class="text-xs pb-4 pt-2 text-gray-600 mb-6">
+    {content.fullAccounting.note}
+  </p>
 
-  <h3 class="font-bold">{content.customQuote.title}</h3>
-  <p class="pb-8 pt-2">{content.customQuote.description}</p>
+  <h3 class="font-serif font-semibold text-xl text-gray-700 pb-2">
+    {content.customQuote.title}
+  </h3>
+  <p class="pt-2 pb-8 font-light text-gray-700">
+    {content.customQuote.description}
+  </p>
 
-  <p class="pb-6">
-    <a href={content.customQuote.action.href} class="py-2 px-4 bg-gray-100">
+  <p class="pb-4">
+    <a
+      href={content.customQuote.action.href}
+      class="font-sans py-3 px-6 border-gray-800 bg-gray-800 text-white border rounded-xs text-lg inline-flex gap-4 items-center"
+    >
       {content.customQuote.action.label}
+      <ArrowRight class="text-white" />
     </a>
   </p>
 </section>

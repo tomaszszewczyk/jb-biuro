@@ -4,8 +4,8 @@ const content = {
   address: ["ul. Mieszka I 17A/1", "58-100 Świdnica"],
   contactTitle: "Kontakt",
   contacts: [
-    { href: "tel:+48748577566", label: "74 857 75 66" },
-    { href: "tel:+48693368459", label: "693 368 459" },
+    { href: "tel:+48748577566", label: "+48 74 857 75 66" },
+    { href: "tel:+48693368459", label: "+48 693 368 459" },
     { href: "mailto:ksiegowosctwoja@wp.pl", label: "ksiegowosctwoja@wp.pl" },
   ],
   companyDataTitle: "Dane firmy",
@@ -23,18 +23,22 @@ const content = {
 };
 ---
 
-<footer class="p-4 flex flex-col gap-4">
+<footer class="px-4 py-8 flex flex-col gap-4 border-t border-gray-300">
   <div>
-    <p><strong>{content.company}</strong></p>
-    <p>
+    <p class="font-serif font-semibold text-lg text-gray-700">
+      {content.company}
+    </p>
+    <p class="py-1 font-light text-gray-700">
       {content.address[0]}<br />
       {content.address[1]}
     </p>
   </div>
 
   <div>
-    <p><strong>{content.contactTitle}</strong></p>
-    <p>
+    <p class="font-serif font-semibold text-lg text-gray-700">
+      {content.contactTitle}
+    </p>
+    <p class="py-1 font-light text-gray-700">
       {
         content.contacts.map((item, index) => (
           <>
@@ -47,13 +51,17 @@ const content = {
   </div>
 
   <div>
-    <p><strong>{content.companyDataTitle}</strong></p>
-    <ul class="flex flex-col">
+    <p class="font-serif font-semibold text-lg text-gray-700">
+      {content.companyDataTitle}
+    </p>
+    <ul class="flex flex-col py-1 gap-1">
       {
         content.companyData.map((item) => (
           <li class="flex gap-2 items-baseline">
-            <span class="w-12 text-sm">{item.label}</span>
-            <span>{item.value}</span>
+            <span class="text-gray-600 w-12 text-xs text-right">
+              {item.label}
+            </span>
+            <span class="font-light text-gray-700">{item.value}</span>
           </li>
         ))
       }
@@ -61,13 +69,13 @@ const content = {
   </div>
 
   <div>
-    <nav class="text-center pt-4">
+    <nav class="text-center pt-4 font-light text-gray-700 text-lg">
       {
         content.nav.map((item, index) => (
           <span>
             <a href={item.href}>{item.label}</a>
             {index !== content.nav.length - 1 ? (
-              <span class="px-2">|</span>
+              <span class="px-3">\</span>
             ) : (
               ""
             )}

@@ -61,20 +61,24 @@ const content = {
 };
 ---
 
-<section id="oferta" class="p-4">
-  <h2 class="font-bold text-xl">{content.title}</h2>
-  <p class="py-2">{content.description}</p>
+<section id="oferta" class="px-4 py-8">
+  <h2 class="font-semibold text-2xl font-serif text-gray-700">
+    {content.title}
+  </h2>
+  <p class="py-2 font-light text-gray-700">{content.description}</p>
 
   {
     content.services.map((service) => (
-      <div class="border border-gray-100 p-4 my-4">
-        <h3 class="font-bold text-lg">{service.title}</h3>
-        <p class="py-2">{service.description}</p>
-        <ul class="flex flex-col gap-4 px-2 py-4">
+      <div class="border border-gray-200 p-4 my-4 rounded-xs">
+        <h3 class="font-serif font-semibold text-xl text-gray-700">
+          {service.title}
+        </h3>
+        <p class="py-2 text-gray-600 text-sm">{service.description}</p>
+        <ul class="flex flex-col gap-4 px-1 py-4">
           {service.items.map((item) => (
             <li class="flex gap-2">
-              <CheckIcon class="shrink-0 text-gray-500" />
-              <span class="text-sm pt-0.5">{item}</span>
+              <CheckIcon class="shrink-0 text-gray-600" />
+              <span class="text-sm pt-0.75 text-gray-600">{item}</span>
             </li>
           ))}
         </ul>
@@ -82,8 +86,10 @@ const content = {
     ))
   }
 
-  <div class="border border-gray-100 p-4 my-4">
-    <h3 class="font-bold text-lg">{content.grants.title}</h3>
-    <p class="py-2">{content.grants.description}</p>
+  <div class="border border-gray-200 rounded-xs p-4 my-4">
+    <h3 class="font-serif font-semibold text-xl text-gray-700">
+      {content.grants.title}
+    </h3>
+    <p class="py-2 text-gray-600 text-sm">{content.grants.description}</p>
   </div>
 </section>

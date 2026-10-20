@@ -23,15 +23,19 @@ const content = {
 };
 ---
 
-<section id="o-nas" class="p-4">
-  <h2 class="font-bold text-xl">{content.title}</h2>
-  <p class="pt-2 pb-6">{content.description}</p>
+<section id="o-nas" class="px-4 pt-8">
+  <h2 class="font-semibold text-2xl font-serif text-gray-700 pb-4">
+    {content.title}
+  </h2>
+  <p class="pb-8 font-light text-gray-700">{content.description}</p>
 
   {
     content.points.map((point) => (
       <>
-        <h3 class="font-bold text-lg">{point.title}</h3>
-        <p class="pb-4">{point.description}</p>
+        <h3 class="font-semibold text-xl font-serif text-gray-700 pb-2">
+          {point.title}
+        </h3>
+        <p class="pb-8 font-light text-gray-700">{point.description}</p>
       </>
     ))
   }

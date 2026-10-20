@@ -1,4 +1,6 @@
 ---
+import ArrowRight from "./icons/ArrowRight.astro";
+
 const content = {
   title: "Twoja księgowość, niezależnie od lokalizacji",
   paragraphs: [
@@ -12,11 +14,17 @@ const content = {
 };
 ---
 
-<section class="p-4">
-  <h2 class="font-bold text-xl">{content.title}</h2>
-  <p class="py-2">{content.paragraphs[0]}</p>
-  <p class="pt-2 pb-6">{content.paragraphs[1]}</p>
-  <a href={content.action.href} class="py-2 px-4 bg-gray-100">
+<section class="px-4 py-8">
+  <h2 class="font-semibold text-2xl font-serif text-gray-700">
+    {content.title}
+  </h2>
+  <p class="py-2 font-light text-gray-700">{content.paragraphs[0]}</p>
+  <p class="pt-2 pb-8 font-light text-gray-700">{content.paragraphs[1]}</p>
+  <a
+    href={content.action.href}
+    class="font-sans py-3 px-6 border-gray-800 bg-gray-800 text-white border rounded-xs text-lg inline-flex gap-4 items-center"
+  >
     {content.action.label}
+    <ArrowRight class="text-white" />
   </a>
 </section>
