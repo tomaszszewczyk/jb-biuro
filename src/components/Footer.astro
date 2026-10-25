@@ -1,4 +1,8 @@
 ---
+const commitHash = import.meta.env.PUBLIC_COMMIT_HASH;
+const buildDate = import.meta.env.PUBLIC_BUILD_DATE;
+const buildDateLabel = buildDate.slice(0, 16).replace("T", " ") + " UTC";
+
 const content = {
   company: "Biuro Rachunkowe Joanna Bączar sp. z o.o.",
   addressTitle: "Adres",
@@ -91,5 +95,8 @@ const content = {
         }
       </nav>
     </div>
+    <p class="text-center text-[10px] text-sky-200">
+      Wersja {commitHash} · Zbudowano <time datetime={buildDate}>{buildDateLabel}</time>
+    </p>
   </div>
 </footer>
