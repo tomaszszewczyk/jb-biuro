@@ -34,3 +34,32 @@ jobs:
           path: dist/
           include-hidden-files: true
           if-no-files-found: error
+
+  deploy:
+    name: Deploy to production
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    concurrency:
+      group: production-deploy
+      cancel-in-progress: false
+    steps:
+      - name: Download build output
+        uses: actions/download-artifact@v4
+        with:
+          name: build
+          path: dist/
+
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Upload site to OVH
+        env:
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          test -n "$FTP_USERNAME"
+          test -n "$FTP_PASSWORD"
+          lftp -u "$FTP_USERNAME,$FTP_PASSWORD" \
+            -e "set cmd:fail-exit yes; set ftp:ssl-allow no; mirror -R --delete dist/ /www; quit" \
+            ftp://ftp.cluster129.hosting.ovh.net/
